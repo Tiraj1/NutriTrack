@@ -1,27 +1,19 @@
-import FoodSearch from "@/components/food/food-search"
-import DailyLog from "@/components/food/daily-log"
-import BarcodeScanner from "@/components/food/barcode-scanner"
-import AIMeal from "@/components/food/ai-meal"
+import ManualLog from "@/components/food/manual-log"
 
 export default function LogPage(){
 
-  const userId="demo-user"
+ return(
 
-  return(
-    <div className="p-8 space-y-8">
+  <div className="space-y-6">
 
-      <h1 className="text-2xl font-bold">
-        Log Food
-      </h1>
+   <h1 className="text-2xl font-bold">
+    Log Food
+   </h1>
 
-      <FoodSearch/>
+   <ManualLog/>
 
-      <BarcodeScanner/>
+  </div>
 
-      <AIMeal/>
+ )
 
-      <DailyLog userId={userId}/>
-
-    </div>
-  )
 }
