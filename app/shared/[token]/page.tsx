@@ -1,12 +1,6 @@
 import { prisma } from "@/lib/prisma"
 
-type PageProps = {
-  params: {
-    token: string
-  }
-}
-
-export default async function SharedPage({ params }: PageProps) {
+export default async function SharedPage({ params }: any) {
 
   const share = await prisma.share.findUnique({
     where: { token: params.token }
@@ -24,6 +18,7 @@ export default async function SharedPage({ params }: PageProps) {
 
   return (
     <div className="p-8">
+
       <h1 className="text-2xl font-bold mb-6">
         Shared Nutrition Report
       </h1>
@@ -33,6 +28,7 @@ export default async function SharedPage({ params }: PageProps) {
           {log.foodName} — {log.calories} kcal
         </div>
       ))}
+
     </div>
   )
 }
